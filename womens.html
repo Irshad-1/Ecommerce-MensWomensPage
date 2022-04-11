@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            width:80%;
+            margin: auto;
+            gap:30px;
+        }
+        #container>div >h3{
+            color:rgb(210, 159, 18);
+            text-align: center;
+        }
+
+        #container >div >img{
+            max-width: 100%;
+        }
+        .cartbtn{
+            width: 100%;
+            background-color:rgb(210, 159, 18);
+            color:white;
+            border: 0px;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .cartbtn:active{
+            background-color:rgb(146, 124, 10);
+        }
+        body > a{
+            background-color: black;
+            color:white;
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <a href="cart.html">Go To Cart</a>
+    <h1>Womens</h1>
+    <div id="container"></div>
+</body>
+<script>
+    var womensData=[{
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220318/6dnS/6234224aaeb26921afe289ae/glam_roots_pink_paisley_printed_collar-neck_dress.jpg",
+        brand:"GLAM ROOTS",
+        name:"Paisley Printed Collar-Neck Dress",
+        price:"₹700"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220318/g0xn/623421ecaeb26921afe282e7/glam_roots_green_floral__printed_fit_and_flare_dress.jpg",
+        brand:"GLAM ROOTS",
+        name:"Floral  Printed Fit And Flare Dress",
+        price:"₹700"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220117/41qj/61e5548af997dd6623245198/glam_roots_orange_indian_collar-neck_dress.jpg",
+        brand:"GLAM ROOTS",
+        name:"Indian Collar-Neck Dress",
+        price:"₹704"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220318/yn89/623421e2aeb26921afe28232/glam_roots_pink_printed_flared_dress.jpg",
+        brand:"GLAM ROOTS",
+        name:"Printed Flared Dress",
+        price:"₹700"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220318/Urv3/6234220aaeb26921afe28514/glam_roots_yellow_floral_printed_fit_and_flare__dress.jpg",
+        brand:"GLAM ROOTS",
+        name:"Floral Printed Fit And Flare Dress",
+        price:"₹700"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220318/Fxik/62342283aeb26921afe28e34/glam_roots_blue__floral_print_flared_kurta_with_tassel.jpg",
+        brand:"GLAM ROOTS",
+        name:" Floral Print Flared Kurta with Tassel",
+        price:"₹594"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220312/JEPE/622c2100f997dd03e20f45c6/kvs_fab_mauve_embroidered_gown_dress_with_sleeve_tie-ups.jpg",
+        brand:"KVS FAB",
+        name:"Embroidered Gown Dress with Sleeve Tie-Ups",
+        price:"₹2063"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220318/G0Vp/6234221daeb26921afe286bb/glam_roots_yellow_floral_printed_fit_and_flare_dress.jpg",
+        brand:"GLAM ROOTS",
+        name:"Floral Printed Fit And Flare Dress",
+        price:"₹595"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220324/F0cy/623c5ca9aeb26921afefabeb/kvs_fab_mustard_embellished_flared_kurta_set.jpg",
+        brand:"KVS FAB",
+        name:"Embellished Flared Kurta Set",
+        price:"₹2839"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220321/h3Vu/62383ccbf997dd03e2203a03/kvs_fab_blue_floral_embroidered_gown_dress_with_waist_tie-up.jpg",
+        brand:"The Indian Garage Co",
+        name:"Floral Embroidered Gown Dress",
+        price:"₹2063"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220217/dhi3/620d6261f997dd03e2d3f9cc/kvs_fab_olive_green_embellished_lehenga_choli_set_with_dupatta.jpg",
+        brand:"KVS FAB",
+        name:"Embellished Lehenga Choli Set with Dupatta",
+        price:"₹2686"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220318/gU0P/6234227aaeb26921afe28d6d/glam_roots_blue_floral_printed_fit_and_flare__dress.jpg",
+        brand:"GLAM ROOTS",
+        name:"Floral Printed Fit And Flare  Dress",
+        price:"₹700"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20210311/yGV7/6049c644aeb26969817f8d8d/cottinfab_black_polka-dot_sleeveless_a-line_dress.jpg",
+        brand:"COTTINFAB",
+        name:"Polka-dot Sleeveless A-Line Dress",
+        price:"₹700"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20211101/sHPT/617fe800f997ddf8f1f5aa32/kvs_fab_red_block_print_kurta_suit_set.jpg",
+        brand:"KVS FAB",
+        name:"Block Print Kurta Suit Set",
+        price:"₹1503"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220318/ihvK/623421d1f997dd03e21d3db6/glam_roots_green_paisley_printed_fit_and_flare_dress.jpg",
+        brand:"GLAM ROOTS",
+        name:"Paisley Printed Fit And Flare Dress",
+        price:"₹700"
+    },
+];
+    var cartData;
+
+    if(localStorage.getItem('cartData')==null){
+        cartData=[];
+    }
+    else{
+        cartData=JSON.parse(localStorage.getItem('cartData'));
+    }
+
+
+    womensData.forEach((womenData)=>{
+        var box = document.createElement('div');
+        var image=document.createElement('img');
+        image.src=womenData.imageUrl;
+
+        var brand=document.createElement('h3');
+        brand.innerText=womenData.brand;
+        var productName=document.createElement('p');
+        productName.innerText=womenData.name;
+
+        var price=document.createElement('h4');
+        price.innerText=womenData.price;
+        var cartButton=document.createElement('button');
+        cartButton.innerText="Add to cart";
+
+        cartButton.className='cartbtn';
+
+        cartButton.addEventListener('click',()=>{
+            cartData.push(womenData);
+            localStorage.setItem('cartData',JSON.stringify(cartData));
+        })
+
+        box.append(image,brand,productName,price,cartButton);
+        document.querySelector('#container').append(box);
+    });
+
+
+
+
+</script>
+</html>

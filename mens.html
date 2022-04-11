@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            width:80%;
+            margin: auto;
+            gap:30px;
+        }
+        #container>div >h3{
+            color:rgb(210, 159, 18);
+            text-align: center;
+        }
+
+        #container >div >img{
+            max-width: 100%;
+        }
+        .cartbtn{
+            width: 100%;
+            background-color:rgb(210, 159, 18);
+            color:white;
+            border: 0px;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .cartbtn:active{
+            background-color:rgb(146, 124, 10);
+        }
+        body > a{
+            background-color: black;
+            color:white;
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <a href="cart.html">Go To Cart</a>
+    <h1>Mens</h1>
+    <div id="container"></div>
+</body>
+<script>
+    var mensData=[{
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20210316/wTvc/604fba47aeb2696981866118/the_indian_garage_co_grey_checked_shirt_with_patch_pocket.jpg",
+        brand:"The Indian Garage Co",
+        name:"Checked Shirt with Patch Pocket",
+        price:"₹577"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20210316/Sb6O/604fb886f997dd5c40117b55/the_indian_garage_co_teal_blue_printed_slim_fit_shirt_with_patch_pocket.jpg",
+        brand:"The Indian Garage Co",
+        name:"Printed Slim Fit Shirt with Patch Pocket",
+        price:"₹570"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20210401/cSLP/6065e760f997dd7b645b4e65/netplay_blue_striped_slim_fit_shirt_with_patch_pocket.jpg",
+        brand:"NETPLAY",
+        name:"Striped Slim Fit Shirt with Patch Pocket",
+        price:"₹490"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20210623/uayV/60d230bbaeb269a9e3072903/netplay_white_striped_slim_fit_shirt.jpg",
+        brand:"NETPLAY",
+        name:"Striped Slim Fit Shirt",
+        price:"₹699"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20210316/HUQY/6050cc77f997dd5c4013b4e2/the_indian_garage_co_multicoloured_checked_slim_fit_cotton_shirt.jpg",
+        brand:"The Indian Garage Co",
+        name:"Checked Slim Fit Cotton Shirt",
+        price:"₹577"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20210401/byO4/6065e5807cdb8c1f14731db7/netplay_navy_blue_striped_slim_fit_shirt_with_patch_pocket.jpg",
+        brand:"NETPLAY",
+        name:"Checked Shirt with Patch Pocket",
+        price:"₹577"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20210316/wTvc/604fba47aeb2696981866118/the_indian_garage_co_grey_checked_shirt_with_patch_pocket.jpg",
+        brand:"The Indian Garage Co",
+        name:"Striped Slim Fit Shirt with Patch Pocket",
+        price:"₹480"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20200902/qaFd/5f4e97cff997dd6918b1e9b3/the_indian_garage_co_navy_blue_checked_slim_fit_shirt_with_patch_pocket.jpg",
+        brand:"The Indian Garage Co",
+        name:"Checked Slim Fit Shirt with Patch Pocket",
+        price:"₹577"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20220326/2B4a/623e1f4cf997dd03e23403ea/the_indian_garage_co_green_checked_shirt_with_buttoned_flap_pockets.jpg",
+        brand:"The Indian Garage Co",
+        name:"Checked Shirt with Buttoned Flap Pockets",
+        price:"₹647"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20211228/s1km/61ca36a4aeb26901101f7577/the_indian_garage_co_white_striped_slim_fit_shirt_with_patch_pocket.jpg",
+        brand:"The Indian Garage Co",
+        name:"Striped Slim Fit Shirt with Patch Pocket",
+        price:"₹577"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20210316/lB4k/604fb4a4aeb2696981864ed7/the_indian_garage_co__checked_slim_fit_shirt_with_patch_pocket.jpg",
+        brand:"The Indian Garage Co",
+        name:"Checked Slim Fit Shirt with Patch Pocket",
+        price:"₹577"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20211002/QXiV/61586aabf997ddce89efe9df/ecko_olive_slim_fit_hooded_shirt_with_button-flap_pockets.jpg",
+        brand:"ECKO",
+        name:"Slim Fit Hooded Shirt with Button-Flap Pockets",
+        price:"₹909"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20211224/gPIi/61c4c23daeb26901101a2af8/louis_philippe_blue_leaf_print_shirt_with_patch_pocket.jpg",
+        brand:"LOUIS PHILIPPE",
+        name:"Leaf Print Shirt with Patch Pocket",
+        price:"₹1379"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20211002/0Ek2/6157cf78aeb2692b859afce1/ecko_aqua_slim_fit_shirt_with_button-flap_pockets.jpg",
+        brand:"ECKO",
+        name:"Slim Fit Shirt with Button-Flap Pockets",
+        price:"₹944"
+    },
+    {
+        imageUrl:"https://assets.ajio.com/medias/sys_master/root/20211002/OlEi/615784e6aeb2692b859a7e61/ecko_blue_slim_fit_denim_shirt_with_detachable_hood.jpg",
+        brand:"ECKO",
+        name:"Slim Fit Denim Shirt with Detachable Hood",
+        price:"₹909"
+    },
+]
+    var cartData;
+
+    if(localStorage.getItem('cartData')==null){
+        cartData=[];
+    }
+    else{
+        cartData=JSON.parse(localStorage.getItem('cartData'));
+    }
+
+
+    console.log(typeof mensData);
+    mensData.forEach((menData)=>{
+        var box = document.createElement('div');
+        var image=document.createElement('img');
+        image.src=menData.imageUrl;
+
+        var brand=document.createElement('h3');
+        brand.innerText=menData.brand;
+        var productName=document.createElement('p');
+        productName.innerText=menData.name;
+
+        var price=document.createElement('h4');
+        price.innerText=menData.price;
+        var cartButton=document.createElement('button');
+        cartButton.innerText="Add to cart";
+
+        cartButton.className='cartbtn';
+
+        cartButton.addEventListener('click',()=>{
+            cartData.push(menData);
+            localStorage.setItem('cartData',JSON.stringify(cartData));
+        })
+
+        box.append(image,brand,productName,price,cartButton);
+        document.querySelector('#container').append(box);
+    });
+
+
+
+
+</script>
+</html>
